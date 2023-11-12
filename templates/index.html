@@ -1,13 +1,34 @@
 {% extends "bootstrap/base.html" %}
 {% block title %} Exemplo - Form 04 {% endblock %}
 {% block content %}
-    <form method="post" action="{{ url_for('resultado') }}">
-        ID: <input name="id"/> <br/>
-        Nome: <input name="nome"/> <br/>
-        Sobrenome: <input name="sobrenome"/> <br/>
-        Telefone: <input name="telefone"/> <br/>
-        Email: <input name="email"/> <br/>
-        <hr/>
-        <input type="submit" text="Listar Contato" />
-    </form>
+<html>
+    <body>
+        
+    
+        <link rel="stylesheet" href="static/css/style.css">
+
+        <form class="my-form" method="post" action="{{ url_for('resultado') }}">
+            <label for="id">ID:</label>
+            <input type="text" name="id" id="id" class="form-control" /><br/>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" class="form-control" /><br/>
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="sobrenome" class="form-control" /><br/>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" name="telefone" id="telefone" class="form-control" /><br/>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" /><br/>
+
+            <hr/>
+
+            <input type="submit" value="Listar Contato" class="btn btn-primary" />
+        </form>
+
+    </body>
+
+</html>
 {% endblock %}
