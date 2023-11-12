@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Listar Alunos {% endblock %}
+{% block content %}
+    <table class="table" border = 1>
+        <thead>
+           <td>Id</td>
+           <td>Nome</td>
+           <td>Sobrenome</td>
+           <td>Telefone</td>
+           <td>Email</td>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+           <tr>
+            <td>{{ row.ID }}</td>
+            <td>{{ row.NOME }}</td>
+            <td>{{ row.SOBRENOME }}</td>
+            <td>{{ row.TELEFONE }}</td>
+            <td>{{ row.EMAIL }}</td>	
+           </tr>
+        {% endfor %}
+         </tbody>
+     </table>
+
+{% endblock %}
