@@ -28,8 +28,10 @@ def resultado():
     cursor = conexao.cursor()
     cursor.execute("INSERT INTO CONTATOS(ID, NOME, SOBRENOME, TELEFONE, EMAIL) VALUES (?, ? , ? , ? , ? )", (id,nome,sobrenome,telefone,email))
     conexao.commit()
+    cursor.execute("SELECT * FROM CONTATOS WHERE [NOME] = (?) AND [SOBRENOME] = (?) AND [TELEFONE] = (?) AND [EMAIL] = (?)", (nome, sobrenome, telefone, email))
+    rows = cursor.fetchall()
     conexao.close()
-    return render_template("resultado.html", nome=nome,)
+    return render_template("resultado.html", rows = rows)
 
 @app.route("/alunos")
 def listar():
