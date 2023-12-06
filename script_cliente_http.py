@@ -18,7 +18,7 @@ import time
 
 FREQUENCIA = 1
 
-URL = 'http://127.0.0.1:3000'
+URL = 'https://g1.globo.com/go/goias/'
 
 while True:
     response = requests.get(URL)

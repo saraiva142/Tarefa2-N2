@@ -2,7 +2,16 @@ version: '3'
 services:
   app:
     build: .
-    ports:
-      - "3000:3000"
-
-# docker-compose up -d
+    container_name: teste
+    tty: true
+    stdin_open: true
+    # command: 
+    #   - bash
+    #   - -c
+    #   - |
+    #     python script_cliente_http.py
+    #working_dir: /app
+    # volumes:
+    #   - ./:/app
+    # ports:
+    #   - "3000:3000"
