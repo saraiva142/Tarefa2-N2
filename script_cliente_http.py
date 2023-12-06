@@ -1,9 +1,11 @@
-import docker
+import requests
+import time
 
-client = docker.from_env()
+FREQUENCIA = 1
 
-#Máquinas que irão rodar :
-NUM_CONTAINERS = 5
+URL = 'http://127.0.0.1:3000'
 
-for i in range(NUM_CONTAINERS):
-    client.containers.run('minha-imagem-dicker', detach=True)
+while True:
+    response = request.get(URL)
+    print(f'Status Code: {response.status_code}. Response Time: {response.elapsed.total_seconds()}')
+    time.sleep(FREQUENCIA)
